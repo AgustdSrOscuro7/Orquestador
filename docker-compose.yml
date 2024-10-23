@@ -1,0 +1,71 @@
+services:
+  step-1:
+    image: step-1:latest
+    container_name: resolve-enigma-api-uno
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://host.docker.internal:8888
+    networks:
+      - orchestration-network
+    ports:
+      - "8080:8080"
+
+  step-2:
+    image: step-2:latest
+    container_name: resolve-enigma-api-dos
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://host.docker.internal:8888
+    networks:
+      - orchestration-network
+    ports:
+      - "8081:8081"
+
+  step-3:
+    image: step-3:latest
+    container_name: resolve-enigma-api-tres
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://host.docker.internal:8888
+    networks:
+      - orchestration-network
+    ports:
+      - "8082:8082"
+
+  webhook:
+    image: webhook:latest
+    container_name: webhook
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://host.docker.internal:8888
+    networks:
+      - orchestration-network
+    ports:
+      - "8083:8083"
+  
+  webflux:
+    image: webflux:latest
+    container_name: webflux
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://host.docker.internal:8888
+    networks:
+      - orchestration-network
+    ports:
+      - "9000:9000"
+    depends_on:
+      - webhook
+      - step-1
+      - step-2
+      - step-3
+  
+  batch:
+    image: batch:latest
+    container_name: batch
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://host.docker.internal:8888
+    ports:
+      - "9001:9001"
+    networks:
+      - orchestration-network
+    depends_on:
+    - webflux
+
+networks:
+  orchestration-network:
+    driver: bridge

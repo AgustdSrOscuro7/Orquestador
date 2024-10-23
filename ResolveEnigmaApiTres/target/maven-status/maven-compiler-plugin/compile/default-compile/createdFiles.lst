@@ -1,0 +1,15 @@
+co\com\rudas\microservice\resolveEnigmaApi\model\JsonApiBodyResponseSuccess.class
+co\com\rudas\microservice\resolveEnigmaApi\model\Header.class
+co\com\rudas\microservice\resolveEnigmaApi\api\GetStepApiController.class
+co\com\rudas\microservice\resolveEnigmaApi\api\ApiOriginFilter.class
+co\com\rudas\microservice\resolveEnigmaApi\model\JsonApiBodyResponseErrors.class
+co\com\rudas\microservice\resolveEnigmaApi\api\NotFoundException.class
+co\com\rudas\microservice\resolveEnigmaApi\SwaggerSpringBootApplication.class
+co\com\rudas\microservice\resolveEnigmaApi\model\GetEnigmaStepResponse.class
+co\com\rudas\microservice\resolveEnigmaApi\model\ErrorDetail.class
+co\com\rudas\microservice\resolveEnigmaApi\config\SwaggerDocumentationConfig.class
+co\com\rudas\microservice\resolveEnigmaApi\model\JsonApiBodyRequest.class
+co\com\rudas\microservice\resolveEnigmaApi\api\GetStepApi.class
+co\com\rudas\microservice\resolveEnigmaApi\model\GetEnigmaRequest.class
+co\com\rudas\microservice\resolveEnigmaApi\api\ApiException.class
+co\com\rudas\microservice\resolveEnigmaApi\api\ApiResponseMessage.class
